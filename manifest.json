@@ -7,7 +7,7 @@
 	"__comentario":"Define en que pag va iniciar",
 	"display":"standalone",
 	"__comentario":"standalone es el modo de la pagina sin barra de nav",
-	"orientation":"portrait-primary",
+	"orientation":"portrait",
 	"theme_color":"rgba(160,247,167,1)",
 	"background_color":"rgba(160,247,167,1)"
 }
