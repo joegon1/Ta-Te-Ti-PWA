@@ -9,5 +9,20 @@
 	"__comentario":"standalone es el modo de la pagina sin barra de nav",
 	"orientation":"portrait",
 	"theme_color":"rgba(160,247,167,1)",
-	"background_color":"rgba(160,247,167,1)"
+	"background_color":"rgba(160,247,167,1)",
+	"icons":[
+				{
+					"src":"img/ico96x96.png",
+					"type":"image/png",
+					"size":"96x96"
+				},
+
+				{
+					"src":"img/ico144x144.png",
+					"type":"image/png",
+					"size":"144x144"
+				}
+
+
+			]
 }
