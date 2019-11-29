@@ -8,8 +8,8 @@
 	"display":"standalone",
 	"__comentario":"standalone es el modo de la pagina sin barra de nav",
 	"orientation":"portrait",
-	"theme_color":"rgba(160,247,167,1)",
-	"background_color":"rgba(160,247,167,1)",
+	"theme_color":"#A0F7A7",
+	"background_color":"#A0F7A7",
 	"icons":[
 				{
 					"src":"img/icon-96x96.png",
