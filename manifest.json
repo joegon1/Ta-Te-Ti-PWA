@@ -21,6 +21,18 @@
 					"src":"img/icono1_144x144.png",
 					"type":"image/png",
 					"size":"144x144"
+				},
+
+				{
+					"src":"img/icono1_256x256.png",
+					"type":"image/png",
+					"size":"256x256"
+				},
+
+				{
+					"src":"img/icono1_192x192.png",
+					"type":"image/png",
+					"size":"192x192"
 				}
 
 
