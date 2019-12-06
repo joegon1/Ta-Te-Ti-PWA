@@ -18,15 +18,15 @@ self.addEventListener("install", evt =>
 
 //Activar el Service Worker.
 self.addEventListener("activate", evt =>{
-		console.log("El service worker se activo.");
+		//console.log("El service worker se activo.");
 		//3°-Chequearemos la version de cache, borraremos la version obsoleta.
 		evt.waitUntil(
 			caches.keys().then(keys => {
-				//console.log(keys);
-				return Promise.all(keys
-					.filter(key => key !== nombreCache)
-					.map(key => caches.delete(key))
-				)
+				console.log(keys);
+				//return Promise.all(keys
+				//	.filter(key => key !== nombreCache)
+				//	.map(key => caches.delete(key))
+				//)
 			})
 		);
 	});
