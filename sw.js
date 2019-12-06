@@ -1,5 +1,5 @@
 const nombreCache="sitio-Cache";
-const elementos=["/","/.html","/css/estilo.css","/js/accion.js"];
+const elementos=["https://github.com/joegon1/Ta-Te-Ti-PWA","index.html","css/estilo.css","js/accion.js", "manifest.json"];
 
 
 
@@ -17,8 +17,28 @@ self.addEventListener("install", evt =>
 	});
 
 //Activar el Service Worker.
-self.addEventListener("activate", evt => {console.log("El Service Worker se activó");});
+self.addEventListener("activate", evt =>{
+		console.log("El service worker se activo.");
+		//3°-Chequearemos la version de cache, borraremos la version obsoleta.
+		evt.waitUntil(
+			caches.keys().then(keys => {
+				//console.log(keys);
+				return Promise.all(keys
+					.filter(key => key !== nombreCache)
+					.map(key => caches.delete(key))
+				)
+			})
+		);
+	});
 
 
 //Eventos Fetch (fetch request o pedido de busqueda).
-self.addEventListener("fetch", evt => {console.log("Se atrapó el evento: ", evt);});
+self.addEventListener("fetch", evt =>{
+	//console.log("Se atrapo el evento: ",evt);
+	//2°-Atrapamos los pedidos, para que los busque en el cache.
+	evt.respondWith(
+		caches.match(evt.request).then(cacheRes => {
+			return cacheRes || fetch(evt.request)
+		})
+	);
+});
