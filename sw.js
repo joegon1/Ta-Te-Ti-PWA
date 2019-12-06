@@ -1,5 +1,5 @@
 const nombreCache="sitio-Cache";
-const elementos=["https://joegon1.github.io/Ta-Te-Ti-PWA/","index.html","css/estilo.css","js/accion.js", "manifest.json"];
+const elementos=["https://joegon1.github.io/Ta-Te-Ti-PWA/","index.html","css/estilo.css","js/accion.js","js/app.js", "manifest.json"];
 
 
 
