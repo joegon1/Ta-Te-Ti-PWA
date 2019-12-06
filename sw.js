@@ -1,4 +1,4 @@
-const nombreCache="sitio-Cache";
+const nombreCache="sitio-Cache - v2";
 const elementos=["https://joegon1.github.io/Ta-Te-Ti-PWA/","index.html","css/estilo.css","js/accion.js","js/app.js", "manifest.json"];
 
 
@@ -23,10 +23,10 @@ self.addEventListener("activate", evt =>{
 		evt.waitUntil(
 			caches.keys().then(keys => {
 				console.log(keys);
-				//return Promise.all(keys
-				//	.filter(key => key !== nombreCache)
-				//	.map(key => caches.delete(key))
-				//)
+				return Promise.all(keys
+					.filter(key => key !== nombreCache)
+					.map(key => caches.delete(key))
+				)
 			})
 		);
 	});
