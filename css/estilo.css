@@ -134,3 +134,9 @@ h1
 	{
 		background-color: rgba(0,0,0,0.2);
 	}
+
+.error
+	{
+		grid-column: span 3;
+		justify-self: center;
+	}
