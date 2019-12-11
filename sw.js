@@ -3,6 +3,17 @@ const elementos=["https://joegon1.github.io/Ta-Te-Ti-PWA/","index.html","css/est
 const dinamicoCache="sitio-dinamico-v1";
 
 
+//Funcion para limitar el cache
+const limiteCache = (nombre, tamaño)=> {
+	caches.open(nombre).then(cache => {
+		cache.keys().then(keys =>{
+			if(keys.length > tamaño){
+				cache.delete(keys[0]).then(limiteCache(nombre, tamaño));
+			}
+		})
+	})
+};
+
 //Instalar el Service Worker
 self.addEventListener("install", evt => 
 	{
@@ -40,6 +51,7 @@ self.addEventListener("fetch", evt =>{
 		caches.match(evt.request).then(cacheRes => {
 			return cacheRes || fetch(evt.request).then(fetchRes =>{return caches.open(dinamicoCache).then
 					(cache =>{cache.put(evt.request.url, fetchRes.clone());
+						limiteCache(dinamicoCache, 5);
 						return fetchRes;
 					})})
 		}).catch(() => {
